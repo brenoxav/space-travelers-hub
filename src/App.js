@@ -14,13 +14,13 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/my-profile">
+        <Route path="/my-profile" exact={true}>
           <MyProfile />
         </Route>
-        <Route path="/missions">
+        <Route path="/missions" exact={true}>
           <Missions />
         </Route>
-        <Route path="/">
+        <Route path="/" exact={true}>
           <Rockets />
         </Route>
       </Switch>

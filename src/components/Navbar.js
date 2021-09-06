@@ -7,9 +7,9 @@ export default function Navbar() {
     <div>
       <h1>Space Traveler' Hub</h1>
       <nav>
-        <NavLink to="/">Rockets</NavLink>
-        <NavLink activeClassName="selected" to="/missions">Missions</NavLink>
-        <NavLink activeClassName="selected" to="/my-profile">My Profile</NavLink>
+        <NavLink to="/" activeClassName="selected" exact={true}>Rockets</NavLink>
+        <NavLink to="/missions" activeClassName="selected" exact={true}>Missions</NavLink>
+        <NavLink to="/my-profile" activeClassName="selected" exact={true}>My Profile</NavLink>
       </nav>
     </div>
   )
