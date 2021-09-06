@@ -1,10 +1,10 @@
 import './App.css';
-import Navbar from './components/Navbar';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import MyProfile from './components/MyProfile';
@@ -14,13 +14,13 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/my-profile" exact={true}>
+        <Route path="/my-profile" exact>
           <MyProfile />
         </Route>
-        <Route path="/missions" exact={true}>
+        <Route path="/missions" exact>
           <Missions />
         </Route>
-        <Route path="/" exact={true}>
+        <Route path="/" exact>
           <Rockets />
         </Route>
       </Switch>
