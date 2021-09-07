@@ -1,4 +1,4 @@
-import api from "../../api/SpaceXAPI";
+import api from '../../api/SpaceXAPI';
 
 const GET_ROCKETS_FROM_API = 'rockets/GET_ROCKETS_FROM_API';
 
@@ -12,7 +12,7 @@ const formatRockets = (apiResponse) => {
     flickr_images: rocket.flickr_images,
   }));
   return rocketsArr;
-}
+};
 
 export const getRocketsFromApi = () => ((dispatch) => {
   api.getRockets()
@@ -27,7 +27,6 @@ export const getRocketsFromApi = () => ((dispatch) => {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-
     case GET_ROCKETS_FROM_API:
       return [
         ...action.payload,
@@ -36,6 +35,6 @@ const reducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default reducer;
