@@ -8,13 +8,17 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 
 import store from '../redux/configureStore';
-import { reserveRocket } from '../redux/rockets/rockets';
+import { reserveRocket, cancelRocketReservation } from '../redux/rockets/rockets';
 
 export default function Rockets() {
   const rockets = useSelector((state) => state.rockets);
 
-  const handleClick = (rocket) => {
-    store.dispatch(reserveRocket(rocket));
+  const handleClick = (rocket) => (e) => {
+    if (e.target.textContent === 'Reserve Rocket') {
+      store.dispatch(reserveRocket(rocket));
+    } else if (e.target.textContent === 'Cancel Reservation') {
+      store.dispatch(cancelRocketReservation(rocket));
+    }
   };
 
   const rocketList = rockets.map((rocket) => (
@@ -27,9 +31,15 @@ export default function Rockets() {
         <p>{rocket.description}</p>
         <Button
           variant="primary"
-          onClick={() => handleClick(rocket)}
+          onClick={handleClick(rocket)}
         >
           Reserve Rocket
+        </Button>
+        <Button
+          variant="outline-secondary"
+          onClick={handleClick(rocket)}
+        >
+          Cancel Reservation
         </Button>
       </Col>
     </Row>
