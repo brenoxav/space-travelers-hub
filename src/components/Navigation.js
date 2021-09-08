@@ -9,7 +9,7 @@ import logo from '../images/planet.png';
 export default function Navigation() {
   return (
     <Navbar bg="light">
-      <Container class="container-xl">
+      <Container className="container-xl">
         <Navbar.Brand href="#home">
           <img
             alt=""
@@ -21,18 +21,9 @@ export default function Navigation() {
           <span className="h2">Space Travelers&apos; Hub</span>
         </Navbar.Brand>
         <Nav>
-          <Nav.Link>
-            <NavLink to="/" activeClassName="selected" exact>Rockets</NavLink>
-
-          </Nav.Link>
-          <Nav.Link>
-            <NavLink to="/missions" activeClassName="selected" exact>Missions</NavLink>
-
-          </Nav.Link>
-          <Nav.Link>
-            <NavLink to="/my-profile" activeClassName="selected" exact>My Profile</NavLink>
-
-          </Nav.Link>
+          <NavLink to="/" className="navlink" activeClassName="navlink-active" exact>Rockets</NavLink>
+          <NavLink to="/missions" className="navlink" activeClassName="navlink-active" exact>Missions</NavLink>
+          <NavLink to="/my-profile" className="navlink" activeClassName="navlink-active" exact>My Profile</NavLink>
         </Nav>
       </Container>
     </Navbar>

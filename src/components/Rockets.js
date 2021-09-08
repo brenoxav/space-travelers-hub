@@ -23,7 +23,7 @@ export default function Rockets() {
   ));
 
   return (
-    <Container class="container-xl">
+    <Container className="container-xl">
       {rocketList}
     </Container>
   );

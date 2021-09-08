@@ -1,3 +1,11 @@
-.selected {
+.navlink {
+  text-decoration: none;
+}
+.navlink:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.navlink-active {
   text-decoration: underline;
+  font-weight: bold;
 }
