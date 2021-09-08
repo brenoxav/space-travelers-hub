@@ -8,7 +8,7 @@ const initialState = [];
 
 const missionsData = (apiResponse) => {
   const missionsArray = apiResponse.map((mission) => ({
-    id: mission.id,
+    id: mission.mission_id,
     mission_name: mission.mission_name,
     description: mission.description,
   }));
