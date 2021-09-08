@@ -7,8 +7,16 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 
+import store from '../redux/configureStore';
+import { reserveRocket } from '../redux/rockets/rockets';
+
 export default function Rockets() {
   const rockets = useSelector((state) => state.rockets);
+
+  const handleClick = (rocket) => {
+    store.dispatch(reserveRocket(rocket));
+  };
+
   const rocketList = rockets.map((rocket) => (
     <Row key={rocket.id} className="my-4">
       <Col sm={3}>
@@ -17,7 +25,12 @@ export default function Rockets() {
       <Col>
         <h2 className="h4">{rocket.rocket_name}</h2>
         <p>{rocket.description}</p>
-        <Button variant="primary">Reserve Rocket</Button>
+        <Button
+          variant="primary"
+          onClick={() => handleClick(rocket)}
+        >
+          Reserve Rocket
+        </Button>
       </Col>
     </Row>
   ));

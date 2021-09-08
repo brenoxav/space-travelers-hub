@@ -1,6 +1,8 @@
 import api from '../../api/SpaceXAPI';
 
 const GET_ROCKETS_FROM_API = 'rockets/GET_ROCKETS_FROM_API';
+const RESERVE_ROCKET = 'rockets/RESERVE_ROCKET';
+const CANCEL_ROCKET_RESERVATION = 'rockets/CANCEL_ROCKET_RESERVATION';
 
 const initialState = [];
 
@@ -25,15 +27,45 @@ export const getRocketsFromApi = () => ((dispatch) => {
     });
 });
 
+export const reserveRocket = (payload) => ({
+  type: RESERVE_ROCKET,
+  payload,
+});
+
+export const cancelRocketReservation = (payload) => ({
+  type: CANCEL_ROCKET_RESERVATION,
+  payload,
+});
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_ROCKETS_FROM_API:
+    case GET_ROCKETS_FROM_API: {
       return [
         ...action.payload,
       ];
+    }
 
-    default:
+    case RESERVE_ROCKET: {
+      const newState = state.map((rocket) => {
+        if (rocket.id !== action.payload.id) {
+          return rocket;
+        }
+        return { ...rocket, reserved: true };
+      });
+      return [
+        ...newState,
+      ];
+    }
+
+    case CANCEL_ROCKET_RESERVATION: {
+      return [
+        ...state,
+      ];
+    }
+
+    default: {
       return state;
+    }
   }
 };
 
