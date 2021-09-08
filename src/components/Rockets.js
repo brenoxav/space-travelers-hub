@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
 
 import store from '../redux/configureStore';
 import { reserveRocket, cancelRocketReservation } from '../redux/rockets/rockets';
@@ -28,19 +29,30 @@ export default function Rockets() {
       </Col>
       <Col>
         <h2 className="h4">{rocket.rocket_name}</h2>
-        <p>{rocket.description}</p>
-        <Button
-          variant="primary"
-          onClick={handleClick(rocket)}
-        >
-          Reserve Rocket
-        </Button>
-        <Button
-          variant="outline-secondary"
-          onClick={handleClick(rocket)}
-        >
-          Cancel Reservation
-        </Button>
+        <p>
+          {rocket.reserved && (
+            <Badge bg="success" className="me-2">Reserved</Badge>
+          )}
+          {rocket.description}
+        </p>
+
+        {!rocket.reserved && (
+          <Button
+            variant="primary"
+            onClick={handleClick(rocket)}
+          >
+            Reserve Rocket
+          </Button>
+        )}
+
+        {rocket.reserved && (
+          <Button
+            variant="outline-secondary"
+            onClick={handleClick(rocket)}
+          >
+            Cancel Reservation
+          </Button>
+        )}
       </Col>
     </Row>
   ));
