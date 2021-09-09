@@ -21,9 +21,9 @@ export default function Navigation() {
           <span className="h2">Space Travelers&apos; Hub</span>
         </Navbar.Brand>
         <Nav>
-          <NavLink to="/" className="navlink" activeClassName="navlink-active" exact>Rockets</NavLink>
-          <NavLink to="/missions" className="navlink" activeClassName="navlink-active" exact>Missions</NavLink>
-          <NavLink to="/my-profile" className="navlink" activeClassName="navlink-active" exact>My Profile</NavLink>
+          <NavLink to="/" className="navlink text-nowrap" activeClassName="navlink-active" exact>Rockets</NavLink>
+          <NavLink to="/missions" className="navlink text-nowrap" activeClassName="navlink-active" exact>Missions</NavLink>
+          <NavLink to="/my-profile" className="navlink text-nowrap" activeClassName="navlink-active" exact>My Profile</NavLink>
         </Nav>
       </Container>
     </Navbar>

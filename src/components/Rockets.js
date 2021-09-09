@@ -38,6 +38,7 @@ export default function Rockets() {
 
         {!rocket.reserved && (
           <Button
+            className="text-nowrap"
             variant="primary"
             onClick={handleClick(rocket)}
           >
@@ -47,6 +48,7 @@ export default function Rockets() {
 
         {rocket.reserved && (
           <Button
+            className="text-nowrap"
             variant="outline-secondary"
             onClick={handleClick(rocket)}
           >

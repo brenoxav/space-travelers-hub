@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Bookstore
+# Space Travelers' Hub
 
 > Showcase SpaceX rockets and missions.
 

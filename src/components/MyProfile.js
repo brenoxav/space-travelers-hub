@@ -16,7 +16,14 @@ export default function MyProfile() {
     </ListGroup.Item>
   ));
 
-  const myMissions = [];
+  const missions = useSelector((state) => state.missions);
+  const joinedMissions = missions.filter((mission) => mission.reserved);
+
+  const myMissions = joinedMissions.map((mission) => (
+    <ListGroup.Item key={mission.id}>
+      {mission.mission_name}
+    </ListGroup.Item>
+  ));
 
   return (
     <Container className="container-xl">
