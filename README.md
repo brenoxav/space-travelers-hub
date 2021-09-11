@@ -8,7 +8,7 @@
 ![screenshot](./screenshot-2.png)
 ![screenshot](./screenshot-3.png)
 
-A React and Redux app consuming data from the SpaceX API.
+A React and Redux single page app consuming data from the SpaceX API.
 
 ## Built With
 
@@ -16,6 +16,7 @@ A React and Redux app consuming data from the SpaceX API.
 - JavaScript
 - React
 - Redux
+- React Bootstrap.
 
 ## Live Demo
 
@@ -62,7 +63,7 @@ You can either build a local production version of the project or open it direct
   ```
   2. Then go to `http://localhost:3000/` in you preferred browser.
 
-## Author
+## Authors
 
 👨‍💻 **Breno Xavier**
 
